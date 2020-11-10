@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Collapse, Tree, Spin } from 'antd';
 import TestFieldsWebAPI from '../WebAPIs/TestFieldsWebAPI';
 import { v4 } from 'uuid';
@@ -20,7 +20,7 @@ export default function TestFields()
     }, [])
 
     return (
-        <Fragment>
+        <div style={{margin:'0 40px'}}>
             <div className="HeaderBar">HJL-NL-TI-V Test Fields Tree View:</div>
 
             <Spin spinning={!loaded} style={{ marginTop: '32px' }}>
@@ -28,7 +28,7 @@ export default function TestFields()
                     {testFields.map(item => GeneratePanel(item))}
                 </Collapse>
             </Spin>
-        </Fragment>);
+        </div>);
 
     async function LoadFromWebAPIAsync()
     {
